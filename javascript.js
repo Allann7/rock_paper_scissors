@@ -4,7 +4,7 @@ function getComputerChoice(){
     if (CompChoice <= 33){
         return "Rock";
     }
-    else if (CompChoice > 33 & CompChoice < 66){
+    else if (CompChoice > 33 & CompChoice <= 66){
         return "Paper";
     }
     else {
@@ -18,41 +18,40 @@ function getHumanChoice(){
         2. Paper
         3. Scissor`)
 
-        HumChoice = HumChoice.toString();
-        HumChoice = HumChoice.toLowerCase();
+        HumChoice = HumChoice?.toString();
+        HumChoice = HumChoice?.toLowerCase();
 
         console.log(HumChoice);
+        
+        switch (HumChoice){
+            case "1":
+                return "Rock";
+            break;
 
-        if (HumChoice === "1" || "2" || "3" || "rock" || "paper" || "scissor"){
-            switch (HumChoice){
-                case "1":
-                    return "Rock";
-                break;
+            case "2":
+                return "Paper";
+            break;
 
-                case "2":
-                    return "Paper";
-                break;
+            case "3":
+                return " Scissor";
+            break;
 
-                case "3":
-                    return " Scissor";
-                break;
+            case "rock":
+                return "Rock";
+            break;
 
-                case "rock":
-                    return "Rock";
-                break;
+            case "paper":
+                return "Paper";
+            break;
 
-                case "paper":
-                    return "Paper";
-                break;
+            case "scissor":
+                return "Scissor";
+            break;
 
-                case "scissor":
-                    return "Scissor";
-                break;
-
-                default:
-                    alert("Invalid option, please try again.");
-                    return getHumanChoice();
-            }
+            default:
+                alert("Invalid option, please try again.");
+                return getHumanChoice();
+            
         }
 }
 
