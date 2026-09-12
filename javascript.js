@@ -55,11 +55,9 @@ function getHumanChoice(){
         }
 }
 
-function playRound(){
-    let HC = getHumanChoice();
-    console.log(`Nice!!! you have selected: ${HC}`);
+function playRound(HC, CC){
 
-    let CC = getComputerChoice();
+    console.log(`Nice!!! you have selected: ${HC}`);
     console.log(`The computer have selected: ${CC}`);
 
     switch(true){
@@ -116,14 +114,20 @@ Score: You ${HumScore}    Computer ${CompScore}
             console.log(`TIE!! Shoot again...
                 
                 `)
-        return playRound();
-               
     }
 }
 
 function playGame(){
+
     do{
-        playRound();
+        let HC = getHumanChoice();
+        let CC = getComputerChoice();
+
+        playRound(HC, CC);
+        
+        HC = "";
+        CC = "";
+    
     }while(HumScore < 5 && CompScore < 5)
 
     if(HumScore===5){
